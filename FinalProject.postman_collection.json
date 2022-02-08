@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "41a1d154-dda4-4669-ad7a-5aa0bc576655",
+		"name": "FinalProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Member",
+			"item": [
+				{
+					"name": "PostUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "patika",
+								"password": "password"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic dXNlcm5hbWU6cGFzc3dvcmQ=",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tcNo\":\"58018116881\",\r\n    \"name\":\"CANLI\",\r\n    \"lastName\":\"alicanli1995@gmail.com\",\r\n    \"salary\": 90000,\r\n    \"phoneNumber\":\"12345678932\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/memberAdd"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/memberDelete"
+					},
+					"response": []
+				},
+				{
+					"name": "ListAllUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "patika",
+								"password": "password"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/members"
+					},
+					"response": []
+				},
+				{
+					"name": "EditMember",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"CANLI\",\r\n    \"lastName\":\"alicanli1995@gmail.com\",\r\n    \"salary\": 300,\r\n    \"phoneNumber\":\"9321154545\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/memberEditSave/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Credit",
+			"item": [
+				{
+					"name": "QueryCreditLimit",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "username",
+								"password": "password"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tcNo\":\"58018116882\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/status"
+					},
+					"response": []
+				},
+				{
+					"name": "ActiveCredit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tcNo\":\"58018116882\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/status/get"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

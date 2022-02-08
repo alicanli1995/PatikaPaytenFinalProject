@@ -1,0 +1,4 @@
+
+1 - >  git clone
+2 - >  docker build -t patika-grad-project.jar .
+3 - >  docker-compose -f docker-compose.yml up -d

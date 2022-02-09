@@ -7,7 +7,7 @@
 
 >  [Siteye gitmek için tıklayınız.](https://gradproject-payten-patika.herokuapp.com) 
 
-# <center> Sistemin Çalışma
+# <center> Sistemin Çalışma Videosu
 
 [![Live](https://res.cloudinary.com/marcomontalbano/image/upload/v1644403010/video_to_markdown/images/youtube--csSkful5Byc-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=csSkful5Byc "Live")
 

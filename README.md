@@ -27,7 +27,7 @@
 
 # <center> Test
 
-*Mock ve Unit test sonuçları aşağıda ki gibidir.*
+*Mock ve Integration test sonuçları aşağıda ki gibidir.*
 
 <p align="center"><img src="img/test.png" alt="ci" width="400" class="center"/></p>
 
@@ -46,7 +46,7 @@
     kredi sonucu ve kredi limiti gösterilir.
     Projeye öncelikle bir user post edilir ve bu usera ait bir credit query edilir sonra da bu krediyi almak istiyorsa Status/get adresine post isteği atılarak geçerli kredi aktif edilmiş olur.
 
-Projede bütün userları listeleme servisinde Redis kullanılmıştır. Redis cache otomatik olarak 1 dakika da bir temizlenmektedir.
+Projede bütün userları listeleme servisinde Redis Cache kullanılmıştır. Redis cache otomatik olarak dakika da bir temizlenmektedir.
 
 Proje Layered Architecture uygun olarak tasarlanmıştır. Database olarak PostgreSQL kullanılmıştır. ORM olarak Hibarnate kullanılmıştır.
 

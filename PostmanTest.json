@@ -12,11 +12,7 @@
 					"name": "PostUser",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": {
-								"username": "patika",
-								"password": "password"
-							}
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [
@@ -62,11 +58,7 @@
 					"name": "ListAllUser",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": {
-								"username": "patika",
-								"password": "password"
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -77,6 +69,9 @@
 				{
 					"name": "EditMember",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -101,11 +96,7 @@
 					"name": "QueryCreditLimit",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": {
-								"username": "username",
-								"password": "password"
-							}
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
@@ -125,6 +116,9 @@
 				{
 					"name": "ActiveCredit",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {

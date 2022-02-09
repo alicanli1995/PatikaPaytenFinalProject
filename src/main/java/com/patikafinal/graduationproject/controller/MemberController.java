@@ -22,11 +22,6 @@ public class MemberController {
     @ApiModelProperty(value = "We are dependency injection User Services.")
     private final MemberService memberService;
 
-    @GetMapping("/")
-    @ResponseStatus(HttpStatus.OK)
-    public String welcome(){
-        return "Welcome our app";
-    }
 
     @GetMapping("/members")
     @ResponseStatus(HttpStatus.OK)

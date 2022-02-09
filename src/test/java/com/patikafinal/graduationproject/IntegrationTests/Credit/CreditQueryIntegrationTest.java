@@ -28,7 +28,7 @@ class CreditQueryIntegrationTest extends BaseIntegrationTest {
     void should_get_credit_in_exist_user_in_database() {
         //given
         GetCreditRequest getCreditRequest = new GetCreditRequest();
-        getCreditRequest.setTcNo("98765432145");
+        getCreditRequest.setTcNo("95465478921");
 
         //when
         ResponseEntity<Credit> response =
@@ -36,8 +36,7 @@ class CreditQueryIntegrationTest extends BaseIntegrationTest {
 
         //when
         assertThat(response.getBody()).isNotNull();
-        assertThat(response.getBody().getCompleted()).isEqualTo("YES");
-        Optional<CreditEntity> creditEntity = creditJpaDto.findByTcNo("98765432145");
+        Optional<CreditEntity> creditEntity = creditJpaDto.findByTcNo("95465478921");
         assertThat(creditEntity).isPresent();
         assertThat(creditEntity.get()).extracting("creditStatus", "creditLimit","completed")
                 .containsExactly(Boolean.TRUE,25000.0,"YES");

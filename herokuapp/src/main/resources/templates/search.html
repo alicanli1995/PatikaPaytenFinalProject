@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Importing NavBar -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Credit Managament Api</title>
+  <link rel="stylesheet" th:href="@{/css/search.css}">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.css" rel="stylesheet">
+  <link
+          href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"
+          rel="stylesheet"
+  >
+  <style>
+    body {
+      background-image: url("https://i.hizliresim.com/b5l0ic4.jpg");
+      height: 800px;
+    }
+    .btn{
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    button{
+      width: 70px;
+      height: 40px;
+    }
+    .fl-table td{
+      padding: 0 !important;
+      height: 0 !important;
+    }
+
+  </style>
+</head>
+
+<body>
+<div th:insert="navbar.html :: navbar"></div>
+
+<div id="cover">
+  <form th:action="@{/status}" method="POST" enctype="multipart/form-data">
+    <div class="tb">
+      <div class="td"><input type="text"
+                             class="form-control" name="tcNo" required ="required" maxlength="11" minlength="11"
+                             aria-describedby="emailHelp" placeholder="Tc Number"></div>
+      <div class="td" id="s-cover">
+        <button type="submit">
+          <div id="s-circle"></div>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </form>
+  <br>
+  <br>
+  <br>
+
+  <div th:if="${param.failed}">
+    <div class="alert alert-danger" style="font-size: x-large">This Tc No is not in database check your information.</div>
+  </div>
+
+  <div th:if="${param.success}">
+    <div class="alert alert-success" style="font-size: x-large">Successful, your limit is also listed below</div>
+  </div>
+</div>
+
+
+<div class="table-wrapper" style="margin-top:200px;"  >
+  <table class="fl-table" id="example">
+    <thead>
+    <tr class="bg bg-light " >
+      <th>Query Time</th>
+      <th scope="col">Tc No</th>
+      <th scope="col">Credit Limit</th>
+      <th scope="col">Credit Result</th>
+      <th scope="col">Credit Status</th>
+      <th scope="col">Active/Passive</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="credits,  i:  ${search}">
+      <td th:text=${credits.created}></td>
+      <td th:text=${credits.tcNo}></td>
+      <td th:text=${credits.creditLimit}></td>
+      <td th:text=${credits.creditStatus}></td>
+      <td th:text=${credits.completed}></td>
+      <td>
+        <span th:switch="${credits.completed}">
+          <i th:case="NO">
+            <form th:action="@{/status/{id}(id=${credits.id})}"
+                  method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <button type="submit"
+                        class="btn btn-success btn-sm text-white" >ACTIVE</button>
+              </div>
+            </form>
+          </i>
+          <i th:case="YES">
+          <form th:action="@{/status/{id}(id=${credits.id})}"
+                method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <button type="submit"
+                      class="btn btn-success btn-sm text-white" >PASSIVE</button>
+            </div>
+          </form>
+          </i>
+        </span>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#example').dataTable( {
+      "lengthMenu": [ 3, 5 ]
+    } );
+  } );
+</script>
+<script>
+  function myFunction() {
+    if ( confirm("If you press a button, The money will be transferred to the account, this transaction is irreversible. Do you confirm ?")) {
+      console.log('Thing was saved to the database.');
+    } else {
+      console.log('Thing was not saved to the database.');
+    }
+  }
+</script>
+
+<script
+        src="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" >
+</script>
+<script
+        src="https://code.jquery.com/jquery-3.5.1.js">
+</script>
+<script
+        src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js">
+</script>
+<div th:insert="footer.html :: footer"></div>
+
+</body>
+
+</html>

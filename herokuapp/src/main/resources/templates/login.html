@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Management App</title>
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+ <div id="wrapper">
+    <div id="left">
+        <div id="signin">
+            <div class="logo">
+                <img src="https://patika-prod.s3.eu-central-1.amazonaws.com/staticFiles/patikaLogo.png" alt="Sluralpright" />
+            </div>
+            <form th:action="@{/login}" method="post">
+
+
+                <div>
+                    <label for="username">E-Mail</label>:
+                    <input type="text" required class="text-input" id="username" name="username" placeholder="Enter Email ID" autofocus="autofocus">
+
+
+                </div>
+                <div>
+                    <label for="password">Password</label>:
+                    <input type="password" required class="text-input" id="password" name="password" placeholder="Enter Password" />
+                </div>
+                <button type="submit" name="login-submit" id="login-submit" class="primary-btn">Sign In</button>
+            </form>
+
+            <div class="or">
+                <hr class="bar" />
+                <span>OR</span>
+                <hr class="bar" />
+            </div>
+            <a th:href="@{/registration}" class="secondary-btn">Create an account</a>
+        </div>
+
+
+        <!-- error message -->
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">Invalid username or password.
+            </div>
+        </div>
+
+        <!-- logout message -->
+        <div th:if="${param.logout}">
+            <div class="alert alert-info">You have been logged out.</div>
+        </div>
+
+
+    </div>
+    <div id="right">
+        <div id="showcase">
+            <div class="showcase-content">
+                <h1 class="showcase-text">
+                    Welcome Our Credit Approve Api <br>Let's create the future <strong>together</strong>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

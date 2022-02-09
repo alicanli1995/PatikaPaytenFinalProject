@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/app.css}">
+<title>Edit Credit Management Page</title>
+<style>
+	body {
+		background-image: url("https://i.hizliresim.com/b5l0ic4.jpg");
+		height: 800px;
+	}
+	.btn{
+		border-radius: 50rem;
+	}
+</style>
+</head>
+<body>
+	<!-- Importing NavBar -->
+	<div th:insert="navbar.html :: navbar"></div>
+
+
+	<div class="container py-5 px-4">
+
+		<div class="container">
+			<p class="h4 mb-4 mb">Members-Edit</p>
+			<hr>
+			<form action="#" th:action="@{/memberEditSave}" th:object="${member}"
+				method="POST">
+				<!-- Add hidden form field to handle update -->
+				<input type="hidden" th:field="*{id}" name="memberId" /> <label for="exampleInputEmail1">Member Tc No</label>
+				<input type="text" readonly th:field="*{tcNo}" name="tcNo" class="form-control mb-2 col-4" maxlength="11" minlength="11">
+				<label for="exampleInputEmail1">Name</label>
+				<input type="text" th:field="*{name}" name="name" class="form-control mb-2 col-4">
+	            <label for="exampleInputEmail1">Last Name</label>
+				<input type="text" th:field="*{lastName}" name="lastName" class="form-control mb-2 col-4">
+				<label for="exampleInputEmail1">Salary</label>
+				<input type="number" th:field="*{salary}" name="salary" class="form-control mb-2 col-4">
+				<label for="exampleInputEmail1">Credit Score</label>
+				<input type="text" th:field="*{creditScore}" name="creditScore" class="form-control mb-2 col-4">
+				<label for="exampleInputEmail1">Phone Number</label>
+				<input type="text" th:field="*{phoneNumber}" name="phoneNumber" class="form-control mb-2 col-4" maxlength="11" minlength="11">
+				<br>
+				<br>
+				<br>
+				<button type="submit" style="margin-left: 1000px;" class="btn btn-success mb-2 col-2">Update</button>
+			</form>
+			<a th:href="@{/members}" style="margin-left: 1000px;"  class="btn btn-warning mb-2 col-2">Back </a>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<!-- Importing Footer -->
+	<div th:insert="footer.html :: footer"></div>
+
+
+</body>
+</html>

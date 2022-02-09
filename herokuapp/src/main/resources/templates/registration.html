@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:id="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Management App Registration</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="left">
+        <div id="signin">
+            <div class="logo">
+                <img src="https://patika-prod.s3.eu-central-1.amazonaws.com/staticFiles/patikaLogo.png" alt="Sluralpright" />
+            </div>
+            <form th:action="@{/registration}" method="post" th:object="${account}">
+
+
+
+                <div>
+                    <label for="firstName">First Name</label>:
+                    <input type="text" class="text-input" id="firstName" th:field="*{firstName}" required autofocus="autofocus">
+                </div>
+
+                <div>
+                    <label for="lastName">First Name</label>:
+                    <input type="text" class="text-input" id="lastName" th:field="*{lastName}" required autofocus="autofocus">
+                </div>
+
+                <div>
+                    <label for="mail">Mail</label>:
+                    <input type="text" placeholder="example@example.com" class="text-input" id="mail" th:field="*{mail}" required pattern="[^ @]*@[^ @]*" autofocus="autofocus">
+                </div>
+
+                <div>
+                    <label for="password">Password</label>:
+                    <input type="password" class="text-input" id="password" th:field="*{password}" required autofocus="autofocus" >
+                </div>
+
+                <button type="submit" name="login-submit" id="login-submit" class="primary-btn">Create Account</button>
+
+
+            </form>
+
+            <div class="or">
+                <hr class="bar" />
+                <span>OR</span>
+                <hr class="bar" />
+            </div>
+            <a   th:href="@{/login}" class="secondary-btn">Sign In</a>
+        </div>
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">The Mail is received ! Please enter a different email address.</div>
+        </div>
+        <!-- success message -->
+        <div th:if="${param.success}">
+            <div class="alert alert-info">You've successfully registered to Credit Managament Application!</div>
+            <div class="alert alert-success"> Redirect Login Page</div>
+            <script>
+                let url = "https://gradproject-payten-patika.herokuapp.com/login";
+                setTimeout(function() {
+                    location = url;
+                }, 5000)
+            </script>
+        </div>
+
+    </div>
+    <div id="right">
+        <div id="showcase">
+            <div class="showcase-content">
+                <h1 class="showcase-text">
+                    Welcome Our Credit Approve Api <br>Let's create the future <strong>together</strong>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

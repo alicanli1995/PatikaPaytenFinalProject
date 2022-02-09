@@ -9,8 +9,7 @@
 
 # <center> Sistemin Çalışma
 
-<a href="{https://www.youtube.com/watch?v=0qf55_Oikus}" title="Link Title"><img src="{https://www.youtube.com/watch?v=0qf55_Oikus}" alt="Alternate Text" /></a>
-
+[![Live](https://res.cloudinary.com/marcomontalbano/image/upload/v1644403010/video_to_markdown/images/youtube--csSkful5Byc-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=csSkful5Byc "Live")
 
 # <center>  Çalıştırma Talimatları 
 

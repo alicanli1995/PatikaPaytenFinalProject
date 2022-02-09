@@ -10,10 +10,18 @@
 
 # <center>  Çalıştırma Talimatları 
 
->  https://github.com/yusufyilmazfr/cqrs-design-pattern-java.git
->  cd project
+***Projenin backendinde kullanılan Api, Mock, Integration testleri git üzerinden paylaşılmıştır. Çalıştırmak için;***
+
+>  git clone https://github.com/alicanli1995/PatikaPaytenFinalProject.git
+
+>  cd PatikaPaytenFinalProject
+
 >  docker build -t patika-grad-project.jar .
+
 >  docker-compose -f docker-compose.yml up -d
+
+*Projenin api testlerini POSTMAN üzerinden test edebilirsiniz gerekli hazır postman test dosyasına [BURAYA]()  tıklayarak ulaşıp test edebilirsiniz. Api testine kolaylık açısından Spring Security devre dışı bırakılmıştır. Heroku üzerinden paylaşılan projede spring security aktiftir.*
+
 
 
 
